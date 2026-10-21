@@ -3,7 +3,7 @@
 A Command Line Interface (CLI) trivia application built with Node.js.
 
 ## Overview
-This project  presents multiple-choice questions sequentially, carries out a timer per question, provides immediate answer feedback, and shows a final breakdown of performance.
+This project presents multiple-choice questions sequentially, enforces a timer per question, provides immediate answer feedback, and shows a final breakdown of performance.
 
 ## Features
 - Interactive terminal prompt using Node.js readline.
@@ -19,12 +19,5 @@ This project  presents multiple-choice questions sequentially, carries out a tim
 
 ### Installation & Run
 1. Clone the repository:
-2. Navigate into the directory:
-3. Run the application:
-   npm start
-   # or
-   node index.js
-
-## Project Design
-- **Data Structures**: Questions and options are maintained in an array of objects. Answers and state history are recorded in a separate array during execution.
-- **Asynchronous Flow**: Uses `setTimeout` to limit question response time and `clearTimeout` when an answer is provided before expiration.
+   ```bash
+   git clone [https://github.com/andyaketch/cli_trivia.git](https://github.com/andyaketch/cli_trivia.git)

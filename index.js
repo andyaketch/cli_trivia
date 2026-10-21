@@ -125,4 +125,36 @@ function nextQuestion() {
 
     currentIndex++;
     nextQuestion();
-  })}
+  });
+}
+
+// final summary func to show score
+function showSummary() {
+  console.log("\n=========================================");
+  console.log("               GAME FINISHED             ");
+  console.log("=========================================");
+  console.log("Your total score: " + userScore + " out of " + questionsList.length);
+
+  let finalPercent = (userScore / questionsList.length) * 100;
+  if (finalPercent >= 75) {
+    console.log("Grade: Great job!");
+  } else if (finalPercent >= 50) {
+    console.log("Grade: Passed, but revise a bit.");
+  } else {
+    console.log("Grade: Need more practice.");
+  }
+
+  console.log("\n--- Breakdown ---");
+  // using array method foreach to loop results as per rubric
+  resultsHistory.forEach(function (res, index) {
+    let mark = res.correct ? "[CORRECT]" : "[WRONG]";
+    console.log((index + 1) + ". " + res.questionText);
+    console.log("   Selected: " + res.picked + " -> " + mark);
+  });
+
+  console.log("\nGoodbye!");
+  rl.close();
+}
+
+// run quiz
+startQuiz();
